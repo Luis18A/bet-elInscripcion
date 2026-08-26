@@ -12,9 +12,10 @@
 </head>
 
 <body>
-    <button class="download-btn" onclick="descargarPNG()">⬇ Descargar PNG</button>
 
     <div id="flyer">
+        <!-- Resplandor Ambiental de Fondo -->
+        <div class="ambient-glow"></div>
         <!-- Fondo de Iglesia -->
         <div class="bg-image" style="background-image: url('images/bg-church.jpg');">
         </div>
@@ -200,6 +201,20 @@
             </div>
         </div>
 
+                <!-- Contador de Cuenta Regresiva Centrado -->
+        <div class="countdown-container">
+            <div class="cd-label">FALTAN PARA EL EVENTO</div>
+            <div class="cd-numbers-row">
+                <div class="cd-item"><span id="cd-days">00</span><small>DÍAS</small></div>
+                <span class="cd-sep">:</span>
+                <div class="cd-item"><span id="cd-hours">00</span><small>HS</small></div>
+                <span class="cd-sep">:</span>
+                <div class="cd-item"><span id="cd-mins">00</span><small>MIN</small></div>
+                <span class="cd-sep">:</span>
+                <div class="cd-item"><span id="cd-secs">00</span><small>SEG</small></div>
+            </div>
+        </div>
+
         <div class="verse-box">
             <div class="verse-quote">"Se me ha abierto puerta grande y eficaz..."</div>
             <div class="verse-ref">— 1° Corintios 16:9</div>
@@ -216,10 +231,12 @@
                 <span class="contact-arrow">↑</span>
                 <div class="contact-title">CONTACTO</div>
                 <div class="contact-subtitle">👇 Presiona un número para enviar WhatsApp</div>
-                <a href="https://wa.me/5493885138456?text=Hola%20Hector,%20quisiera%20mas%20informacion%20sobre%20la%20Conferencia%20Bet-El" target="_blank" rel="noopener noreferrer" class="contact-row contact-link">
+                <a href="https://wa.me/5493885138456?text=Hola%20Hector,%20quisiera%20mas%20informacion%20sobre%20la%20Conferencia%20Bet-El"
+                    target="_blank" rel="noopener noreferrer" class="contact-row contact-link">
                     <strong>3885138456</strong> Hector Jara <span class="wa-badge">💬</span>
                 </a>
-                <a href="https://wa.me/541125829843?text=Hola%20Hector,%20quisiera%20mas%20informacion%20sobre%20la%20Conferencia%20Bet-El" target="_blank" rel="noopener noreferrer" class="contact-row contact-link">
+                <a href="https://wa.me/541125829843?text=Hola%20Hector,%20quisiera%20mas%20informacion%20sobre%20la%20Conferencia%20Bet-El"
+                    target="_blank" rel="noopener noreferrer" class="contact-row contact-link">
                     <strong>1125829843</strong> Hector Cattani <span class="wa-badge">💬</span>
                 </a>
             </div>
