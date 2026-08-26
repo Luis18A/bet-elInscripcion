@@ -372,17 +372,18 @@ body {
     background-color: #3b82f6;
     border-radius: 20px;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
     position: relative;
     z-index: 2;
-    margin-top: clamp(16px, 3vw, 28px);
+    margin-top: clamp(12px, 2.5vw, 24px);
     overflow: hidden;
     width: 100%;
 }
 
 .location {
-    padding: clamp(12px, 2vw, 20px) clamp(16px, 3vw, 28px);
+    padding: clamp(8px, 1.8vw, 20px) clamp(10px, 2.2vw, 28px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -390,49 +391,49 @@ body {
 }
 
 .location h3 {
-    font-size: clamp(16px, 2.6vw, 24px);
+    font-size: clamp(13px, 2.6vw, 24px);
     font-weight: 800;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
     color: #ffffff;
 }
 
 .location p {
-    font-size: clamp(11px, 1.5vw, 14px);
+    font-size: clamp(9px, 1.5vw, 14px);
     font-weight: 500;
     color: rgba(255, 255, 255, 0.9);
 }
 
 .contact-box {
     background-color: #1d59cc;
-    padding: clamp(12px, 2vw, 18px) clamp(16px, 3vw, 28px);
+    padding: clamp(8px, 1.8vw, 18px) clamp(10px, 2.2vw, 28px);
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-width: clamp(200px, 35vw, 300px);
+    min-width: clamp(160px, 42vw, 300px);
 }
 
 .contact-arrow {
     position: absolute;
-    top: 12px;
-    right: 18px;
-    font-size: clamp(16px, 2.2vw, 22px);
+    top: clamp(6px, 1.2vw, 12px);
+    right: clamp(8px, 1.5vw, 18px);
+    font-size: clamp(12px, 2vw, 22px);
     font-weight: bold;
     color: #ffffff;
     line-height: 1;
 }
 
 .contact-title {
-    font-size: clamp(10px, 1.4vw, 13px);
+    font-size: clamp(9px, 1.4vw, 13px);
     font-weight: 800;
     letter-spacing: 1.5px;
     color: #ffffff;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
     text-transform: uppercase;
 }
 
 .contact-subtitle {
-    font-size: clamp(8px, 1.1vw, 10px);
+    font-size: clamp(7px, 1.1vw, 10px);
     font-weight: 600;
     color: #93c5fd;
     margin-bottom: 4px;
@@ -440,7 +441,7 @@ body {
 }
 
 .contact-row {
-    font-size: clamp(11px, 1.4vw, 13px);
+    font-size: clamp(9px, 1.4vw, 13px);
     margin-top: 2px;
     color: rgba(255, 255, 255, 0.9);
 }
@@ -459,7 +460,7 @@ body {
 }
 
 .contact-row strong {
-    font-size: clamp(13px, 1.8vw, 16px);
+    font-size: clamp(11px, 1.8vw, 16px);
     font-weight: 800;
     color: #ffffff;
     margin-right: 6px;
@@ -836,35 +837,6 @@ body {
 
     .date-huge-container {
         align-items: center;
-    }
-
-    .contact-us {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .location {
-        width: 100%;
-        text-align: center;
-        padding: 12px 14px;
-    }
-
-    .contact-box {
-        width: 100%;
-        min-width: auto;
-        padding: 12px 14px;
-        text-align: center;
-        align-items: center;
-    }
-
-    .contact-arrow {
-        display: none;
-    }
-
-    .contact-link {
-        justify-content: center;
-        gap: 6px;
     }
 
     .modal-card {
