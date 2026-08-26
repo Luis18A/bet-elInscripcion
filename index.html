@@ -12,10 +12,9 @@
 </head>
 
 <body>
+    <button class="download-btn" onclick="descargarPNG()">⬇ Descargar PNG</button>
 
     <div id="flyer">
-        <!-- Resplandor Ambiental de Fondo -->
-        <div class="ambient-glow"></div>
         <!-- Fondo de Iglesia -->
         <div class="bg-image" style="background-image: url('images/bg-church.jpg');">
         </div>
@@ -168,7 +167,7 @@
                     <img src="images/pastor-left.jpg" class="pastor-img left-img" alt="Pastor 1"
                         onerror="this.style.display='none'">
                 </div>
-                <div class="pastor-name">NOMBRE<br>PASTOR 1</div>
+                <div class="pastor-name">NOMBRE<br>Pr. Invitado</div>
             </div>
 
             <div class="image-col">
@@ -177,7 +176,7 @@
                         onerror="this.style.display='none'">
                     <div class="blue-overlay"></div>
                 </div>
-                <div class="pastor-name blue-text">NOMBRE<br>PASTOR PRINCIPAL</div>
+                <div class="pastor-name blue-text">NOMBRE<br>Pr. Ricardo Valverde- Costa Rica</div>
             </div>
 
             <div class="image-col">
@@ -185,7 +184,7 @@
                     <img src="images/pastor-right.jpg" class="pastor-img right-img" alt="Pastor 2"
                         onerror="this.style.display='none'">
                 </div>
-                <div class="pastor-name">NOMBRE<br>PASTOR 2</div>
+                <div class="pastor-name">NOMBRE<br>Predicador Hector Cattani</div>
             </div>
 
         </div>
@@ -198,20 +197,6 @@
             <div class="date-huge-container">
                 <div class="date-numbers">18, 19, 20</div>
                 <div class="date-month">DE SEPTIEMBRE</div>
-            </div>
-        </div>
-
-        <!-- Contador de Cuenta Regresiva Centrado -->
-        <div class="countdown-container">
-            <div class="cd-label">FALTAN PARA EL EVENTO</div>
-            <div class="cd-numbers-row">
-                <div class="cd-item"><span id="cd-days">00</span><small>DÍAS</small></div>
-                <span class="cd-sep">:</span>
-                <div class="cd-item"><span id="cd-hours">00</span><small>HS</small></div>
-                <span class="cd-sep">:</span>
-                <div class="cd-item"><span id="cd-mins">00</span><small>MIN</small></div>
-                <span class="cd-sep">:</span>
-                <div class="cd-item"><span id="cd-secs">00</span><small>SEG</small></div>
             </div>
         </div>
 
@@ -230,6 +215,7 @@
             <div class="contact-box">
                 <span class="contact-arrow">↑</span>
                 <div class="contact-title">CONTACTO</div>
+                <div class="contact-subtitle">👇 Presiona un número para enviar WhatsApp</div>
                 <a href="https://wa.me/5493885138456?text=Hola%20Hector,%20quisiera%20mas%20informacion%20sobre%20la%20Conferencia%20Bet-El" target="_blank" rel="noopener noreferrer" class="contact-row contact-link">
                     <strong>3885138456</strong> Hector Jara <span class="wa-badge">💬</span>
                 </a>
@@ -276,17 +262,16 @@
                         <input type="number" id="housing-total" min="1" placeholder="Ej. 2">
                     </div>
 
-                                        <div class="form-group-row">
+                    <div class="form-group-row">
                         <div class="form-group half">
-                            <label for="brothers-count">Cuántos hermanos</label>
+                            <label for="brothers-count">Hermanos</label>
                             <input type="number" id="brothers-count" min="0" value="0" placeholder="0">
                         </div>
                         <div class="form-group half">
-                            <label for="sisters-count">Cuántas hermanas</label>
+                            <label for="sisters-count">Hermanas</label>
                             <input type="number" id="sisters-count" min="0" value="0" placeholder="0">
                         </div>
                     </div>
-                    <span id="siblings-error-text" class="error-text error-row-text hidden"></span>
                 </div>
                 <button type="submit" class="submit-btn">Enviar Inscripción</button>
             </form>

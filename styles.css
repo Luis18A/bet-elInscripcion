@@ -915,3 +915,12 @@
     color: #ffffff;
     transform: translateX(3px);
 }
+
+
+.contact-subtitle {
+    font-size: 10px;
+    font-weight: 600;
+    color: #93c5fd;
+    margin-bottom: 4px;
+    letter-spacing: 0.2px;
+}
