@@ -361,13 +361,14 @@ body {
     0% {
         box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4), 0 0 10px rgba(255, 255, 255, 0.3);
     }
+
     100% {
         box-shadow: 0 14px 32px rgba(59, 130, 246, 0.8), 0 0 22px rgba(255, 255, 255, 0.7);
     }
 }
 
-/* Footer CTA Responsivo */
-.footer-cta {
+/* Sección Contact Us - Contenedor Continuo */
+.contact-us {
     background-color: #3b82f6;
     border-radius: 20px;
     display: flex;
@@ -664,11 +665,11 @@ body {
     transition: all 0.2s ease;
 }
 
-.custom-checkbox:hover input ~ .checkmark {
+.custom-checkbox:hover input~.checkmark {
     border-color: #3b82f6;
 }
 
-.custom-checkbox input:checked ~ .checkmark {
+.custom-checkbox input:checked~.checkmark {
     background-color: #2563eb;
     border-color: #60a5fa;
     box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
@@ -687,7 +688,7 @@ body {
     transform: rotate(45deg);
 }
 
-.custom-checkbox input:checked ~ .checkmark:after {
+.custom-checkbox input:checked~.checkmark:after {
     display: block;
 }
 
@@ -837,7 +838,7 @@ body {
         align-items: center;
     }
 
-    .footer-cta {
+    .contact-us {
         flex-direction: column;
         align-items: center;
         text-align: center;
