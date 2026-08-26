@@ -1,0 +1,917 @@
+* {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #111;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #fff;
+            padding: 20px;
+        }
+
+        #flyer {
+            width: 900px;
+            height: 1200px;
+            background-color: #050505;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 50px 35px 20px 35px;
+        }
+
+        /* Fondo Iglesia */
+        .bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 900px;
+            height: 1200px;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.35;
+            filter: grayscale(70%) contrast(1.2) brightness(0.5);
+            z-index: 0;
+        }
+
+        /* Logo Gigante de Fondo (reemplaza a BET-EL) */
+        /* Logo Gigante de Fondo (reemplaza a BET-EL) */
+        .bg-logo {
+            position: absolute;
+            top: 10px;
+            left: 150px;
+            width: 600px;
+            height: auto;
+            z-index: 1;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        /* Contenedor de ImÃ¡genes */
+        .images-section {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 25px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+            height: 480px;
+        }
+
+        .image-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* ENVOLTURAS PARA RECORTE PERFECTO Y ZOOM */
+        .img-crop-box {
+            position: relative;
+            overflow: hidden;
+            background-color: #111;
+            border-radius: 4px;
+        }
+
+        .side-crop {
+            width: 240px;
+            height: 370px;
+        }
+
+        .center-crop {
+            width: 300px;
+            height: 470px;
+            margin-bottom: 20px;
+        }
+
+        .pastor-img {
+            position: absolute;
+            max-width: none;
+        }
+
+        /* Pastor Izquierda (FOTO IZQUIERDA.jpg) */
+        .left-img {
+            width: 175%;
+            /* Zoom in para cortar piernas */
+            top: -2%;
+            /* Ajuste vertical */
+            left: -38%;
+            /* Centrar horizontalmente tras el zoom */
+        }
+
+        /* Pastor Centro (FOTO CENTRAL.jpg) - Foto Horizontal */
+        .center-img {
+            height: 100%;
+            /* Ajusta a lo alto */
+            width: auto;
+            left: -220px;
+            /* Desplaza a la izquierda para revelar al pastor que estÃ¡ a la derecha */
+        }
+
+        /* Pastor Derecha (Gemini...jpg) */
+        .right-img {
+            width: 175%;
+            top: -6%;
+            left: -35%;
+        }
+
+        /* Gradiente Azul Central */
+        .blue-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 160px;
+            background: linear-gradient(to top, rgba(43, 108, 176, 1) 0%, rgba(43, 108, 176, 0.6) 40%, rgba(43, 108, 176, 0) 100%);
+            pointer-events: none;
+        }
+
+        /* Textos Nombres */
+        .pastor-name {
+            font-weight: 700;
+            font-size: 16px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.3;
+            color: #ccc;
+        }
+
+        .blue-text {
+            color: #63b3ed;
+            font-size: 18px;
+        }
+
+        /* Título y Versículo */
+        .mid-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            position: relative;
+            z-index: 2;
+            margin-bottom: 15px;
+            padding: 0 5px;
+        }
+
+        .title-area h1 {
+            font-size: 28px;
+            font-weight: 800;
+            line-height: 1.15;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+
+        .title-sub {
+            font-size: 16px;
+            color: #ffffff;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        /* Fecha */
+        .date-huge-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+            margin: 0;
+        }
+
+        .date-numbers {
+            font-family: 'Oswald', sans-serif;
+            font-size: 70px;
+            font-weight: 700;
+            line-height: 0.9;
+            transform: skewX(-8deg);
+            color: #ffffff;
+            letter-spacing: -2px;
+        }
+
+        .date-month {
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 5px;
+            color: #ccc;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .date-month::before,
+        .date-month::after {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 2px;
+            background-color: #2b6cb0;
+        }
+
+        .verse-box {
+            background-color: #ffffff;
+            color: #0f3875;
+            padding: 14px 20px;
+            border-radius: 20px;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+            position: relative;
+            z-index: 2;
+        }
+
+        .verse-quote {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #0f3875;
+        }
+
+        .verse-ref {
+            font-size: 20px;
+            font-weight: 800;
+            color: #0d3268;
+        }
+
+
+        /* Inscription Button */
+        .inscription-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 14px 20px;
+            background: linear-gradient(135deg, #3b82f6 0%, #1d59cc 100%);
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-radius: 50px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 20px rgba(29, 89, 204, 0.4);
+            cursor: pointer;
+            text-decoration: none;
+            position: relative;
+            z-index: 2;
+            margin-bottom: 8px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+        }
+
+        .inscription-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            box-shadow: 0 12px 28px rgba(59, 130, 246, 0.6), 0 0 15px rgba(255, 255, 255, 0.5);
+            border-color: #ffffff;
+            animation: pulse-glow 1.2s infinite alternate ease-in-out;
+        }
+
+        @keyframes pulse-glow {
+            0% {
+                box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4), 0 0 10px rgba(255, 255, 255, 0.3);
+            }
+
+            100% {
+                box-shadow: 0 14px 32px rgba(59, 130, 246, 0.8), 0 0 22px rgba(255, 255, 255, 0.7);
+            }
+        }
+
+        /* Footer CTA */
+        .footer-cta {
+            background-color: #3b82f6;
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            position: relative;
+            z-index: 2;
+            margin-top: auto;
+            overflow: hidden;
+            height: 110px;
+        }
+
+        .location {
+            padding: 20px 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .location h3 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 4px;
+            color: #ffffff;
+        }
+
+        .location p {
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .contact-box {
+            background-color: #1d59cc;
+            padding: 18px 28px 18px 32px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-width: 270px;
+        }
+
+        .contact-arrow {
+            position: absolute;
+            top: 14px;
+            right: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #ffffff;
+            line-height: 1;
+        }
+
+        .contact-title {
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: #ffffff;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+
+        .contact-row {
+            font-size: 13px;
+            margin-top: 2px;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .contact-row strong {
+            font-size: 16px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-right: 6px;
+        }
+
+        .download-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #48bb78;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+        }
+
+        .download-btn:hover {
+            background-color: #38a169;
+        }
+
+.cls-1 {
+                        fill: none;
+                    }
+
+                    .cls-2 {
+                        fill: url(#logoBetelGrad);
+                        stroke: url(#logoBetelGrad);
+                    }
+
+                    .cls-3 {
+                        clip-path: url(#clip-path);
+                    }
+
+/* =========================================
+   Modal de Inscripción & Formulario
+   ========================================= */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(5, 7, 12, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-card {
+    background: linear-gradient(145deg, #111622 0%, #0a0d14 100%);
+    border: 1.5px solid rgba(59, 130, 246, 0.4);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 480px;
+    padding: 32px 28px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(29, 89, 204, 0.3);
+    position: relative;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    transform: translateY(20px) scale(0.95);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-overlay.active .modal-card {
+    transform: translateY(0) scale(1);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #a0aec0;
+    font-size: 24px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.modal-close-btn:hover {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    transform: rotate(90deg);
+}
+
+.modal-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-align: center;
+    margin: 0 0 4px 0;
+    background: linear-gradient(135deg, #ffffff 0%, #60a5fa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.modal-subtitle {
+    font-size: 13px;
+    color: #94a3b8;
+    text-align: center;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #cbd5e1;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"] {
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 12px 16px;
+    color: #ffffff;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
+    background: rgba(30, 41, 59, 0.9);
+}
+
+/* Checkbox Personalizado */
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: #e2e8f0;
+    user-select: none;
+    position: relative;
+    padding-left: 32px;
+}
+
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.custom-checkbox:hover input ~ .checkmark {
+    border-color: #3b82f6;
+}
+
+.custom-checkbox input:checked ~ .checkmark {
+    background-color: #2563eb;
+    border-color: #60a5fa;
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.custom-checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Sección Condicional de Alojamiento */
+.housing-details {
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px dashed rgba(59, 130, 246, 0.4);
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 12px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+    max-height: 300px;
+    overflow: hidden;
+}
+
+.housing-details.hidden {
+    opacity: 0;
+    max-height: 0;
+    padding: 0 16px;
+    margin: 0;
+    border: none;
+    pointer-events: none;
+}
+
+.housing-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #60a5fa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.form-row {
+    display: flex;
+    gap: 12px;
+}
+
+.form-group.half {
+    flex: 1;
+}
+
+/* Botón de Enviar */
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d59cc 100%);
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 6px 18px rgba(29, 89, 204, 0.4);
+    transition: all 0.25s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+    box-shadow: 0 10px 24px rgba(59, 130, 246, 0.6);
+}
+
+.success-message {
+    margin-top: 16px;
+    padding: 12px;
+    background: rgba(34, 197, 94, 0.15);
+    border: 1px solid rgba(34, 197, 94, 0.4);
+    color: #4ade80;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================
+   Estilos de Validación de Formulario
+   ========================================= */
+.form-group input.error-input {
+    border-color: #ef4444 !important;
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.4) !important;
+    background: rgba(239, 68, 68, 0.08) !important;
+}
+
+.error-text {
+    color: #f87171;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 5px;
+    display: block;
+}
+
+.alert-message {
+    margin-top: 14px;
+    padding: 12px 16px;
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    color: #fca5a5;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+
+/* =========================================
+   Estilos Compactos para Hermanos / Hermanas y Responsivo Móvil
+   ========================================= */
+
+.form-group-row {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+.form-group-row .form-group.half {
+    flex: 1;
+    min-width: 0;
+    margin-bottom: 0;
+}
+
+.form-group-row .form-group.half label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #cbd5e1;
+    margin-bottom: 4px;
+    text-align: center;
+    display: block;
+}
+
+.form-group-row .form-group.half input {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.error-row-text {
+    text-align: center;
+    width: 100%;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+/* Adaptabilidad Responsiva para Celulares */
+@media (max-width: 600px) {
+    .modal-card {
+        width: 94%;
+        padding: 24px 18px;
+        max-height: 92vh;
+        border-radius: 16px;
+    }
+
+    .modal-title {
+        font-size: 24px;
+    }
+
+    .modal-subtitle {
+        font-size: 11px;
+        margin-bottom: 18px;
+    }
+
+    .form-group {
+        margin-bottom: 14px;
+    }
+
+    .form-group label {
+        font-size: 12px;
+        margin-bottom: 4px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="number"] {
+        padding: 10px 12px;
+        font-size: 14px;
+        border-radius: 8px;
+    }
+
+    .form-group-row {
+        gap: 8px;
+    }
+
+    .form-group-row .form-group.half input {
+        padding: 8px 6px;
+        font-size: 13px;
+    }
+
+    .submit-btn {
+        padding: 12px;
+        font-size: 15px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Contador Centrado con Estilo Oswald (como 18, 19, 20) */
+.countdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 4px auto 8px auto;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.cd-label {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    color: #cbd5e1;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.cd-numbers-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.cd-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cd-item span {
+    font-family: 'Oswald', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1;
+    transform: skewX(-8deg);
+    color: #ffffff;
+    letter-spacing: -1px;
+    text-shadow: 0 4px 15px rgba(59, 130, 246, 0.6);
+}
+
+.cd-item small {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #60a5fa;
+    margin-top: 4px;
+}
+
+.cd-sep {
+    font-family: 'Oswald', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #3b82f6;
+    transform: skewX(-8deg);
+    margin-bottom: 12px;
+}
+
+/* Ajuste de Altura de la Sección de Contacto */
+.footer-cta {
+    background-color: #3b82f6;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    position: relative;
+    z-index: 2;
+    margin-top: auto;
+    overflow: hidden;
+    min-height: 110px;
+    height: auto;
+}
+
+.contact-box {
+    background-color: #1d59cc;
+    padding: 16px 24px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 300px;
+}
+
+.contact-row {
+    font-size: 13px;
+    margin-top: 4px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-link {
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contact-link:hover {
+    color: #ffffff;
+    transform: translateX(3px);
+}
